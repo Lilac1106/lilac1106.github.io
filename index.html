@@ -1,4 +1,4 @@
-﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,7 @@
             overflow: hidden;
             font-family: "Microsoft YaHei", sans-serif;
             background: linear-gradient(to bottom, #050510 0%, #0a0a20 50%, #0f0f30 100%);
+            cursor: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2b50.svg'), auto;
         }
         canvas { 
             display: block; 
@@ -174,14 +175,21 @@
             right: 20px;
             width: 50px;
             height: 50px;
-            background: #4a6cf7;
-            color: white;
+            background: white;
+            color: #333;
             border: none;
             border-radius: 50%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             z-index: 1000;
-            font-size: 1.5em;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #toggle-btn:hover {
+            background: #f5f5f5;
+            transform: scale(1.1);
         }
 
         /* ========== 以下是新增：照片 & 信息弹窗样式 ========== */
@@ -259,12 +267,15 @@
 
 <!-- B站视频 -->
 <div class="video-container">
-    <iframe src="https://player.bilibili.com/player.html?bvid=BV1W6G96ZEXa&high_quality=1&danmaku=0" 
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV1W6G96ZEXa&page=1" 
     width="800" height="450" 
     frameborder="0" 
     allowfullscreen="allowfullscreen"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+    scrolling="no">
     </iframe>
+    <p style="color: white; text-align: center; margin-top: 10px;">
+        如果无法播放，请<a href="https://www.bilibili.com/video/BV1W6G96ZEXa" target="_blank" style="color: #4a6cf7;">点击这里直接观看</a>
+    </p>
 </div>
 
 <!-- AI问答面板 -->
@@ -282,7 +293,7 @@
 </div>
 
 <!-- 对话开关 -->
-<button id="toggle-btn">💬</button>
+<button id="toggle-btn">✨</button>
 
 <!-- ========== 以下是新增：照片弹窗 ========== -->
 <div id="photosModal" class="modal">
